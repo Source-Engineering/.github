@@ -159,7 +159,7 @@ flowchart TD
     P5 -.->|Refine Context & Provenance| P2
     P5 -.->|Update Evidence Rules| P3
 ```
-**Security and access control, privacy and data protection, observability and monitoring, scalability and reliability, and standards and interoperability apply across the lifecycle rather than belonging to any single layer.
+_Security and access control, privacy and data protection, observability and monitoring, scalability and reliability, and standards and interoperability apply across the lifecycle rather than belonging to any single layer._
 
 ## The architecture in context
 
