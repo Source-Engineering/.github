@@ -143,7 +143,7 @@ flowchart TD
     P2[2. Contextual Signature\nThe Environment]:::pillar
     P3[3. Chain of Evidence\nThe Proof]:::pillar
     P4[4. Explainability Anchoring\nThe Map]:::pillar
-    P5[5. Human Validation\nThe Loop]:::pillar
+    P5[5. Human Validation\nThe Assurance Loop]:::pillar
     
     %% Execution Engine
     Engine{{System One Engine\nTypeSafe Jev}}:::engine
@@ -162,7 +162,7 @@ flowchart TD
 
 Security and access control, privacy and data protection, observability and monitoring, scalability and reliability, and standards and interoperability apply across the lifecycle rather than belonging to any single layer.
 
-### The architecture in context
+## The architecture in context
 
 Sources feed the platform: authoritative, relevant, and verifiable information drawn from documents, databases, web and external sources, people and expertise, and internal systems. The platform delivers traceable, accountable decisions to four kinds of consumer: business users, applications, regulators and auditors, and organisations.
 
