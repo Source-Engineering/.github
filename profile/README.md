@@ -25,15 +25,101 @@ The discipline brings together:
 
 These concerns apply across model-assisted decisions, automated workflows, enterprise applications, and systems in which decisions must be reviewed or audited.
 
-## Reference architecture
+## Reference architecture and the C.O.T.S Framework
 
 The reference architecture describes how Source Engineering can be implemented as an end-to-end engineering system, from source acquisition to decision delivery, review, and feedback.
 
 ![Source Engineering reference architecture, from sources to traceable decisions](assets/source-engineering-reference-architecture.jpeg)
 
 The architecture is a reference model, not a mandate to adopt a particular vendor, model, framework, or deployment topology.
+----
+Here is the formalized, reusable version of the **C.O.T.S. Framework** (Chain of Orchestrable and Traceable Sources). It has been structured as a practical, referenceable model for AI engineers, architects, and product leaders to implement verifiable AI decision-making in production systems.
 
-### The engineering lifecycle
+---
+
+# The C.O.T.S. Framework 
+### *(Chain of Orchestrable and Traceable Sources)*
+
+**Definition:**  
+C.O.T.S. Framework is a systematic methodology for grounding AI-based decisions with integrity. It transforms opaque, "black-box" AI outputs into verifiable, auditable, and human-aligned reasoning pathways by establishing a strict, multi-stage feedback loop between data ingestion, contextual orientation, decision execution, and human validation.
+
+**Core Philosophy:**  
+AI Software & Service engineering must shift from prompting models to *"produce an answer"*, to orchestrating systems that can *"prove why an answer was chosen" consistently.*
+
+---
+
+## 5 Core Pillars of C.O.T.S.
+
+### 1. Data Provenance Tracking (The "Origin")
+* **Concept:** Every AI decision must have an immutable digital history. 
+* **Implementation:** Automatically log the exact origin of every input used by the model. This includes the raw prompt, retrieved data chunks (RAG), system configurations, model version, and timestamp. 
+* **Output:** A cryptographically hashed or strictly versioned "Input Manifest" attached to every transaction.
+
+### 2. Contextual Signature Mapping (The "Environment")
+* **Concept:** A decision is only as good as its context. The system must understand *who* is asking, *when*, and *under what conditions*.
+* **Implementation:** Develop automated methods to map user context (role, location, historical interactions, time-sensitivity) to specific data subsets and operational parameters. This data dynamically optimizes the model’s inferencing settings (e.g., temperature, entropy, routing paths) in real-time.
+* **Output:** A "Contextual Signature" object that travels with the request, ensuring the model's behavior is bounded by the specific scenario.
+
+### 3. Chain of Evidence Generation (The "Proof")
+* **Concept:** Move beyond free-text "Chain of Thought" (which is hard to parse and prone to hallucination) to structured, machine-readable proof.
+* **Implementation:** For every model output, the system automatically generates a structured list of supporting data points, citations, and contextual factors that directly link back to the Input Manifest. 
+* **Output:** A structured JSON/Knowledge Graph node (e.g., `{ "decision": "X", "confidence": 0.92, "supporting_evidence_ids": ["doc_12", "rule_4A"] }`).
+
+### 4. Explainability Anchoring (The "Map")
+* **Concept:** Reasoning must be navigable, not just stated. 
+* **Implementation:** Integrate workflow orchestration tools to visually and programmatically trace dynamic operations as "breadcrumbs." This creates a digital reasoning roadmap that allows developers and auditors to click through the exact sequence of data points, tool calls, and model invocations that led to the final output.
+* **Output:** An interactive audit trail or "Reasoning Roadmap" UI/dashboard for internal review and compliance.
+
+### 5. Human Validation Points (The "Loop")
+* **Concept:** Trust is built through interactive scrutiny, not passive consumption.
+* **Implementation:** Expose "evidence-aware" feedback mechanisms directly to the end-user or human-in-the-loop. Allow users to probe the model’s reasoning, highlight specific data points in the Chain of Evidence, suggest alternative contexts, and flag inconsistencies.
+* **Output:** Structured, unsolicited/solicited feedback that is fed back into the system to refine future Contextual Signatures and model fine-tuning, closing the OODA (Observe-Orient-Decide-Act) loop.
+
+---
+
+## Operational Lifecycle (OODA Derived & Integrated)
+
+To make this framework actionable, it maps directly to the military-derived **OODA Loop**, adapted for AI engineering:
+
+1. **OBSERVE:** Ingest the user request. Trigger **Data Provenance Tracking** to snapshot the raw state and inputs.
+2. **ORIENT:** Apply **Contextual Signature Mapping** to tailor the environment, retrieve relevant data, and set model parameters.
+3. **DECIDE:** Execute the AI model (ideally a fast, structured decision model like TypeSafe’s Jev). Simultaneously trigger **Chain of Evidence Generation** to bind the output to its supporting data.
+4. **ACT & AUDIT:** Present the decision alongside its **Explainability Anchoring**. Provide **Human Validation Points** for the user to accept, reject, or query the decision, logging the result for continuous improvement.
+
+---
+
+## Implementation Checklist for Engineering Teams
+
+Use this checklist to audit or build your AI pipelines:
+
+- [ ] **Input Logging:** Does every AI call log the exact model version, prompt, and retrieved context IDs?
+- [ ] **Context Binding:** Is user/session context explicitly passed as a structured object, not just baked into a text prompt?
+- [ ] **Structured Output:** Does the model return a structured schema (e.g., via Pydantic/JSON) that includes confidence scores and evidence references, rather than just raw text?
+- [ ] **Traceability:** Can an engineer click a button in our logging system (e.g., Langfuse, Arize) and see the exact data chunks that led to a specific decision?
+- [ ] **User Feedback:** Does the UI expose the "why" to the user, allowing them to flag specific parts of the reasoning as incorrect or biased?
+
+---
+
+## Measuring Success: C.O.T.S. Metrics
+
+To prove the framework is working, track these key metrics:
+1. **Evidence Coverage Rate:** % of AI decisions that successfully return a complete, linked Chain of Evidence.
+2. **Hesitation Factor Reduction:** Measured via user analytics (e.g., decrease in manual overrides, increase in "accept" rates for AI-suggested actions).
+3. **Audit Resolution Time:** Time required for a human reviewer to validate or debug an AI decision (should decrease significantly with Explainability Anchoring).
+4. **Feedback Loop Velocity:** Time taken for user-validated corrections to be incorporated into system prompts, routing rules, or fine-tuning datasets.
+
+---
+
+## Feasibility (The "Jev" & Decision Models Catalyst)
+
+Historically, implementing C.O.T.S. with traditional, autoregressive LLMs was a bottleneck. Generating detailed Chains of Thought, parsing them for evidence, and running multiple contextual checks was too slow and expensive for real-time applications. 
+
+The emergence of **System One models** (like TypeSafe’s Jev) acts as a catalyst for the C.O.T.S. framework. Because these models are designed to output *typed, calibrated decisions with probabilities* in milliseconds, they natively satisfy Pillars 1, 3, and 4 without the overhead of text generation. They make the rigorous, multi-stage auditing demanded by C.O.T.S. economically and computationally viable at scale.
+
+*This framework is derived from the foundational thought leadership of "Source Engineering" (2025). It is provided as an open, reusable mental model for the AI engineering community to build systems that prioritize integrity, auditability, and human-AI collaboration.*
+
+
+### Source Engineering lifecycle
 
 The architecture is organised around five layers, with cross-cutting capabilities that apply across all of them.
 
@@ -44,6 +130,35 @@ The architecture is organised around five layers, with cross-cutting capabilitie
 | 03. Evaluation | Evaluate evidence against declared requirements; detect contradictions; apply validation rules. |
 | 04. Decision | Produce decisions with a recorded evidential basis, rationale, decision record, and audit trail. |
 | 05. Presentation and feedback | Enable inspection, human review, traceability, and feedback-driven improvement. |
+
+```mermaid
+flowchart TD
+    %% Define Styles
+    classDef pillar fill:#f8f9fa,stroke:#495057,stroke-width:2px,color:#212529;
+    classDef engine fill:#e8f4f8,stroke:#0077b6,stroke-width:3px,color:#0077b6;
+    classDef feedback stroke:#e74c3c,color:#e74c3c,stroke-width:2px;
+
+    %% The 5 Pillars
+    P1[1. Data Provenance\nThe Origin]:::pillar
+    P2[2. Contextual Signature\nThe Environment]:::pillar
+    P3[3. Chain of Evidence\nThe Proof]:::pillar
+    P4[4. Explainability Anchoring\nThe Map]:::pillar
+    P5[5. Human Validation\nThe Loop]:::pillar
+    
+    %% Execution Engine
+    Engine{{System One Engine\nTypeSafe Jev}}:::engine
+
+    %% Sequential Flow (The Chain)
+    P1 ==>|Raw State| P2
+    P2 ==>|Contextualized State| Engine
+    Engine ==>|Typed Decision| P3
+    P3 ==>|Navigable Audit Trail| P4
+    P4 ==>|Exposed to User| P5
+
+    %% Feedback Loop (The Cybernetic Cycle)
+    P5 -.->|Refine Context & Provenance| P2
+    P5 -.->|Update Evidence Rules| P3
+```
 
 Security and access control, privacy and data protection, observability and monitoring, scalability and reliability, and standards and interoperability apply across the lifecycle rather than belonging to any single layer.
 
