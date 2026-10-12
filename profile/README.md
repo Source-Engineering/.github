@@ -37,8 +37,8 @@ Here is the formalized, reusable version of the **C.O.T.S. Framework** (Chain of
 
 ---
 
-# The C.O.T.S. Framework 
-### *(Chain of Orchestrable and Traceable Sources)*
+## The C.O.T.S. Framework 
+#### *(Chain of Orchestrable and Traceable Sources)*
 
 **Definition:**  
 C.O.T.S. Framework is a systematic methodology for grounding AI-based decisions with integrity. It transforms opaque, "black-box" AI outputs into verifiable, auditable, and human-aligned reasoning pathways by establishing a strict, multi-stage feedback loop between data ingestion, contextual orientation, decision execution, and human validation.
@@ -48,36 +48,36 @@ AI Software & Service engineering must shift from prompting models to *"produce 
 
 ---
 
-## 5 Core Pillars of C.O.T.S.
+### 5 Core Pillars of C.O.T.S.
 
-### 1. Data Provenance Tracking (The "Origin")
+#### 1. Data Provenance Tracking (The "Origin")
 * **Concept:** Every AI decision must have an immutable digital history. 
 * **Implementation:** Automatically log the exact origin of every input used by the model. This includes the raw prompt, retrieved data chunks (RAG), system configurations, model version, and timestamp. 
 * **Output:** A cryptographically hashed or strictly versioned "Input Manifest" attached to every transaction.
 
-### 2. Contextual Signature Mapping (The "Environment")
+#### 2. Contextual Signature Mapping (The "Environment")
 * **Concept:** A decision is only as good as its context. The system must understand *who* is asking, *when*, and *under what conditions*.
 * **Implementation:** Develop automated methods to map user context (role, location, historical interactions, time-sensitivity) to specific data subsets and operational parameters. This data dynamically optimizes the model’s inferencing settings (e.g., temperature, entropy, routing paths) in real-time.
 * **Output:** A "Contextual Signature" object that travels with the request, ensuring the model's behavior is bounded by the specific scenario.
 
-### 3. Chain of Evidence Generation (The "Proof")
+#### 3. Chain of Evidence Generation (The "Proof")
 * **Concept:** Move beyond free-text "Chain of Thought" (which is hard to parse and prone to hallucination) to structured, machine-readable proof.
 * **Implementation:** For every model output, the system automatically generates a structured list of supporting data points, citations, and contextual factors that directly link back to the Input Manifest. 
 * **Output:** A structured JSON/Knowledge Graph node (e.g., `{ "decision": "X", "confidence": 0.92, "supporting_evidence_ids": ["doc_12", "rule_4A"] }`).
 
-### 4. Explainability Anchoring (The "Map")
+#### 4. Explainability Anchoring (The "Map")
 * **Concept:** Reasoning must be navigable, not just stated. 
 * **Implementation:** Integrate workflow orchestration tools to visually and programmatically trace dynamic operations as "breadcrumbs." This creates a digital reasoning roadmap that allows developers and auditors to click through the exact sequence of data points, tool calls, and model invocations that led to the final output.
 * **Output:** An interactive audit trail or "Reasoning Roadmap" UI/dashboard for internal review and compliance.
 
-### 5. Human Validation Points (The "Loop")
+#### 5. Human Validation Points (The "Loop")
 * **Concept:** Trust is built through interactive scrutiny, not passive consumption.
 * **Implementation:** Expose "evidence-aware" feedback mechanisms directly to the end-user or human-in-the-loop. Allow users to probe the model’s reasoning, highlight specific data points in the Chain of Evidence, suggest alternative contexts, and flag inconsistencies.
 * **Output:** Structured, unsolicited/solicited feedback that is fed back into the system to refine future Contextual Signatures and model fine-tuning, closing the OODA (Observe-Orient-Decide-Act) loop.
 
 ---
 
-## Operational Lifecycle (OODA Derived & Integrated)
+### Operational Lifecycle (OODA Derived & Integrated)
 
 To make this framework actionable, it maps directly to the military-derived **OODA Loop**, adapted for AI engineering:
 
@@ -88,7 +88,7 @@ To make this framework actionable, it maps directly to the military-derived **OO
 
 ---
 
-## Implementation Checklist for Engineering Teams
+### Implementation Checklist for Engineering Teams
 
 Use this checklist to audit or build your AI pipelines:
 
@@ -100,7 +100,7 @@ Use this checklist to audit or build your AI pipelines:
 
 ---
 
-## Measuring Success: C.O.T.S. Metrics
+### Measuring Success: C.O.T.S. Metrics
 
 To prove the framework is working, track these key metrics:
 1. **Evidence Coverage Rate:** % of AI decisions that successfully return a complete, linked Chain of Evidence.
@@ -110,7 +110,7 @@ To prove the framework is working, track these key metrics:
 
 ---
 
-## Feasibility (The "Jev" & Decision Models Catalyst)
+### Feasibility (The "Jev" & Decision Models Catalyst)
 
 Historically, implementing C.O.T.S. with traditional, autoregressive LLMs was a bottleneck. Generating detailed Chains of Thought, parsing them for evidence, and running multiple contextual checks was too slow and expensive for real-time applications. 
 
@@ -119,7 +119,7 @@ The emergence of **System One models** (like TypeSafe’s Jev) acts as a catalys
 *This framework is derived from the foundational thought leadership of "Source Engineering" (2025). It is provided as an open, reusable mental model for the AI engineering community to build systems that prioritize integrity, auditability, and human-AI collaboration.*
 
 
-### Source Engineering lifecycle
+#### Source Engineering lifecycle
 
 The architecture is organised around five layers, with cross-cutting capabilities that apply across all of them.
 
@@ -168,7 +168,7 @@ Sources feed the platform: authoritative, relevant, and verifiable information d
 
 The tagline on the diagram reads: **from sources to trust**.
 
-## Levels of authority
+### Levels of authority
 
 The organisation communicates three levels of authority distinctly.
 
