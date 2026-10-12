@@ -29,7 +29,7 @@ These concerns apply across model-assisted decisions, automated workflows, enter
 
 The reference architecture describes how Source Engineering can be implemented as an end-to-end engineering system, from source acquisition to decision delivery, review, and feedback.
 
-![Source Engineering reference architecture, from sources to traceable decisions](assets/source-engineering-reference-architecture.png)
+![Source Engineering reference architecture, from sources to traceable decisions](assets/source-engineering-reference-architecture.jpeg)
 
 The architecture is a reference model, not a mandate to adopt a particular vendor, model, framework, or deployment topology.
 
