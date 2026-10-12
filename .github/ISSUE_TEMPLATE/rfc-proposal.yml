@@ -1,0 +1,86 @@
+name: RFC proposal
+description: Propose a change to a discipline artefact (foundation, model, specification, architecture, or governance charter).
+title: "RFC: "
+labels: ["discipline", "draft-spec"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose a change to a discipline artefact. For routine changes, the standard PR flow is sufficient. For foundational changes (anything that touches a pillar, a principle, or a COTS component), an RFC is required.
+
+  - type: input
+    id: target-artefact
+    attributes:
+      label: Target artefact
+      description: Which discipline artefact does this RFC propose to change?
+      placeholder: e.g. source-engineering-specifications/cots/v1
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Your GitHub handle.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      description: Initial status of the proposal.
+      options:
+        - Draft
+        - Ready for review
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One-paragraph summary of the proposed change.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this change needed? What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: detailed-proposal
+    attributes:
+      label: Detailed proposal
+      description: The full change specification. Include concrete diffs, examples, or schema changes where possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other approaches were considered? Why was this one chosen?
+    validations:
+      required: false
+
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences
+      description: What becomes easier? What becomes harder? What is the migration path for existing implementations?
+    validations:
+      required: true
+
+  - type: textarea
+    id: cross-references
+    attributes:
+      label: Cross-references
+      description: Links to related RFCs, ADRs, issues, or external references.
+    validations:
+      required: false
