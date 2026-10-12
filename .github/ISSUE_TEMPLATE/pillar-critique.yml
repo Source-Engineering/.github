@@ -1,0 +1,76 @@
+name: Pillar critique
+description: Theoretical feedback on the five pillars, the COTS contract, or the reference architecture.
+title: "Pillar critique: "
+labels: ["discipline", "research-proposal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for theoretical feedback on the discipline: critique of a pillar, the COTS contract, the reference architecture, or the foundational essays. For concrete changes, use the RFC proposal template instead.
+
+  - type: dropdown
+    id: target
+    attributes:
+      label: Target
+      description: Which area does the critique address?
+      options:
+        - Pillar 1: Data Provenance
+        - Pillar 2: Contextual Signature
+        - Pillar 3: Chain of Evidence
+        - Pillar 4: Explainability Anchoring
+        - Pillar 5: Human Validation
+        - COTS contract
+        - Reference architecture
+        - Foundational essay
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Your GitHub handle.
+    validations:
+      required: true
+
+  - type: textarea
+    id: thesis
+    attributes:
+      label: Thesis
+      description: "One sentence: what is your critique?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: argument
+    attributes:
+      label: Argument
+      description: Develop the critique in detail. Cite specific passages, diagrams, or examples.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: What evidence supports the critique? Empirical results, counter-examples, prior art, or case studies.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Alternative framing
+      description: If the critique is constructive, how would you reframe the concept?
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: External citations, papers, or discussions.
+    validations:
+      required: false

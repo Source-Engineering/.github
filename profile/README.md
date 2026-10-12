@@ -185,7 +185,8 @@ Source Engineering is developed through a collection of repositories with explic
 
 | Repository | Responsibility |
 |------------|----------------|
-| [project-governance](https://github.com/Source-Engineering/project-governance) | Change process, ADRs, RFCs, maintainer responsibilities, and release policy. |
+| [project-governance](https://github.com/Source-Engineering/project-governance) | Working home, change process, ROADMAP, and canonical entry point. |
+| [source-engineering-governance](https://github.com/Source-Engineering/source-engineering-governance) | Governance charter, ADRs, RFCs, maintainer responsibilities, and release policy. |
 | [source-engineering-foundations](https://github.com/Source-Engineering/source-engineering-foundations) | Discipline definition, principles, terminology, scope, and non-goals. |
 | [source-engineering-research](https://github.com/Source-Engineering/source-engineering-research) | Research questions, hypotheses, experimental protocols, and findings. |
 
@@ -213,7 +214,7 @@ Source Engineering is developed through a collection of repositories with explic
 | [source-engineering-education](https://github.com/Source-Engineering/source-engineering-education) | Curriculum, learning paths, exercises, and assessment materials. |
 | [source-engineering-case-studies](https://github.com/Source-Engineering/source-engineering-case-studies) | Evaluated demonstrations, reproducible examples, and documented outcomes. |
 
-The `project-governance` repository is the canonical entry point for the change process. The `source-engineering` repository retains the public introduction, navigation, and org-level portal at the discipline top level.
+The `project-governance` repository is the canonical entry point for the change process, and the `source-engineering-governance` repository holds the governance charter, ADRs, and RFCs.
 
 ## How the discipline evolves
 
@@ -225,7 +226,7 @@ Changes to canonical definitions and technical contracts are reviewed in their a
 
 The objective is to maintain conceptual coherence while allowing the discipline to improve through research, implementation experience, and independent scrutiny.
 
-Start with the governance repository to understand the change process.
+Start with `project-governance` for the working home, the change process, and the ROADMAP. The governance charter, ADRs, and RFCs live in `source-engineering-governance`.
 
 ## Contributing
 

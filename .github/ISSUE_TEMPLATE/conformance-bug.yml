@@ -1,0 +1,74 @@
+name: Conformance bug
+description: Report a bug in the conformance harness, test vectors, or validation logic.
+title: "Conformance bug: "
+labels: ["discipline", "bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to report a bug in the discipline's conformance suite (test harness, test vectors, schema, or validation logic). For bugs in the reference implementation, open the issue in `source-engineering-reference-implementation` instead.
+
+  - type: input
+    id: cots-version
+    attributes:
+      label: COTS spec version
+      description: Which version of the COTS spec are you validating against?
+      placeholder: e.g. v1
+    validations:
+      required: true
+
+  - type: input
+    id: harness-version
+    attributes:
+      label: Conformance harness version
+      description: Version of the harness you are running.
+      placeholder: e.g. 0.4.0
+    validations:
+      required: true
+
+  - type: input
+    id: repro
+    attributes:
+      label: Reproduction command
+      description: The exact command that triggers the failure.
+      placeholder: e.g. npx se-conformance validate ./fixtures/sample.json
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: What actually happened? Include the full error output.
+    validations:
+      required: true
+
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Minimal reproducer
+      description: A minimal COTS payload that triggers the bug, or a link to a fixture in the repo.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is the bug?
+      options:
+        - Critical: blocks conformance for any input
+        - High: blocks conformance for specific inputs
+        - Medium: degrades the error message
+        - Low: cosmetic
+    validations:
+      required: true

@@ -1,0 +1,24 @@
+name: General issue
+description: General issue not covered by the RFC, conformance, or pillar-critique templates.
+labels: ["discipline"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For RFC proposals, use the RFC template. For conformance harness bugs, use the conformance-bug template. For theoretical feedback, use the pillar-critique template.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is the issue?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Background, motivation, or repro steps.
+    validations:
+      required: false
