@@ -146,7 +146,7 @@ flowchart TD
     P5[5. Human Validation\nThe Assurance Loop]:::pillar
     
     %% Execution Engine
-    Engine{{System One Engine\nTypeSafe Jev}}:::engine
+    Engine{{Decision Model\nSystem One-type Engine e.g.Jev}}:::engine
 
     %% Sequential Flow (The Chain)
     P1 ==>|Raw State| P2
